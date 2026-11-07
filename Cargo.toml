@@ -1,0 +1,20 @@
+[package]
+name = "archon"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[[bin]]
+name = "archon"
+path = "kernel/src/main.rs"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = 2
+debug = true
+lto = false
+codegen-units = 1
